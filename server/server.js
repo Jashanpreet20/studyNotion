@@ -24,6 +24,8 @@ const PORT = process.env.PORT || 4000;
 app.use(express.json());
 app.use(cookieParser());
 
+
+
 app.use(cors({
         origin:"https://study-notion-eta-jet.vercel.app",
         methods:["POST","GET","PUT","DELETE"],
