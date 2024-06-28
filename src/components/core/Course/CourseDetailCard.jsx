@@ -19,12 +19,15 @@ export default function CourseDetailCard({
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+
   function handleAddToCart() {
+    
     if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
       toast.error("you are an instructor,you cant't by course");
       return;
     }
 
+    
     if (token) {
       dispatch(addToCart(course));
       navigate('/dashboard/cart');

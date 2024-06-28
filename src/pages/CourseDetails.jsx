@@ -15,6 +15,8 @@ import { fetchCourseDetails } from "../services/operations/CourseDetailApi"
 import { buyCourse } from "../services/operations/StudentByFeature"
 import GetAvgRating from "../utils/avgRating"
 import Error from "../components/Common/Error"
+import { ACCOUNT_TYPE } from "../utils/constants"
+import {toast} from 'react-hot-toast'
 
 function CourseDetails() {
   const { user } = useSelector((state) => state.profile)
@@ -107,6 +109,12 @@ function CourseDetails() {
   } = response.data?.courseDetails
 
   const handleBuyCourse = () => {
+
+    if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
+      toast.error("you are an instructor,you cant't by course");
+      return;
+    }
+
     if (token) {
       buyCourse(token, [courseId], user, navigate, dispatch)
       return
