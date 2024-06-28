@@ -82,12 +82,12 @@ export default function Home() {
             }
             ctnbtn1={{
               btntext: "Try it Yourself",
-              linkto: "/signup",
+              value: "/signup",
               active: true,
             }}
             ctnbtn2={{
               btntext: "Learn More",
-              linkto: "/login",
+              value: "/login",
               active: false,
             }}
             codeblock={`<!DOCTYPE html>
@@ -128,12 +128,12 @@ export default function Home() {
             }
             ctnbtn1={{
               btntext: "Continue Lesson",
-              linkto: "/signup",
+              value: "/signup",
               active: true,
             }}
             ctnbtn2={{
               btntext: "Learn More",
-              linkto: "/login",
+              value: "/login",
               active: false,
             }}
             codeblock={`<!DOCTYPE html>

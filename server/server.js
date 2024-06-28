@@ -24,17 +24,17 @@ const PORT = process.env.PORT || 4000;
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors({
-        origin:"https://study-notion-eight-peach.vercel.app/",
-        credentials:true,
-}))
-
-
-
 // app.use(cors({
-//         origin:"*",
+//         origin:"https://study-notion-eight-peach.vercel.app/",
 //         credentials:true,
 // }))
+
+
+
+app.use(cors({
+        origin:"*",
+        credentials:true,
+}))
 
 
 // connection to cloudinary
