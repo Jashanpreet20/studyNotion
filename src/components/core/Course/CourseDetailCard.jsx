@@ -66,7 +66,9 @@ export default function CourseDetailCard({
           </div>
           <div className="flex flex-col gap-4">
             <button
-              className="yellowButton"
+              className="rounded-md bg-yellow-50 px-6 py-3 text-center text-[16px] font-bold
+               text-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)]
+               transition-all duration-200 hover:scale-95 hover:shadow-none"
               onClick={
                 user && course?.studentsEnrolled.includes(user?._id)
                   ? () => navigate("/dashboard/enrolled-courses")
@@ -78,7 +80,9 @@ export default function CourseDetailCard({
                 : "Buy Now"}
             </button>
             {(!user || !course?.studentsEnrolled.includes(user?._id)) && (
-              <button onClick={handleAddToCart} className="blackButton">
+              <button onClick={handleAddToCart} className="rounded-md bg-black-50 px-6 py-3 text-center text-[20px] font-bold
+               text-white shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)]
+               transition-all duration-200 hover:scale-95 hover:shadow-none">
                 Add to Cart
               </button>
             )}

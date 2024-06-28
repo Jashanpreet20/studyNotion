@@ -17,6 +17,7 @@ import GetAvgRating from "../utils/avgRating"
 import Error from "../components/Common/Error"
 import { ACCOUNT_TYPE } from "../utils/constants"
 import {toast} from 'react-hot-toast'
+import HighLightText from "../components/core/HomePage/HighLightText"
 
 function CourseDetails() {
   const { user } = useSelector((state) => state.profile)
@@ -169,8 +170,11 @@ function CourseDetails() {
                 <span>{`${studentsEnrolled.length} students enrolled`}</span>
               </div>
               <div>
-                <p className="">
-                  Created By {`${instructor.firstName} ${instructor.lastName}`}
+                <p className="capitalize font-semibold">
+                  {/* Created By {`${instructor.firstName} ${instructor.lastName}`} */}
+                  created by 
+                   {" "}
+                  <HighLightText  text={`${instructor.firstName} ${instructor.lastName}`} />
                 </p>
               </div>
               <div className="flex flex-wrap gap-5 text-lg">
@@ -188,8 +192,10 @@ function CourseDetails() {
               <p className="space-x-3 pb-4 text-3xl font-semibold text-richblack-5">
                 Rs. {price}
               </p>
-              <button className="yellowButton" onClick={handleBuyCourse}>
-                Buy Now
+              <button className="rounded-md bg-yellow-50 px-6 py-3 text-center text-[13px] font-bold
+               text-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)]
+               transition-all duration-200 hover:scale-95 hover:shadow-none" onClick={handleBuyCourse}>
+                Buy 
               </button>
               <button className="blackButton">Add to Cart</button>
             </div>
