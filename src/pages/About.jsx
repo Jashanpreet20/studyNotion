@@ -116,10 +116,7 @@ export default function About() {
         {/* section 5 */}
         <section className="mx-auto flex flex-col items-center justify-between gap-4 ">
           <LearningGrid />
-          <ContactForm
-            text="Get in Touch"
-            desc="We’d love to here for you, Please fill out this form."
-          />
+         
         </section>
          
       </div>

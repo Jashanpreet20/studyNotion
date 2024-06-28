@@ -29,7 +29,7 @@ export default function InstructorSection() {
             </div>
 
             <div className="flex items-center justify-center mt-20">
-              <CTAButton active={true} linkto={"/singup"}>
+              <CTAButton active={true} linkto={"/signup"}>
                <div className='flex items-center justify-center gap-4'>
                Start Teaching Today
                 <FaArrowRight />

@@ -26,7 +26,7 @@ export default function LearningLanguageSection() {
       </div>
 
         <div className='mt-10 mb-10'>
-          <CTAButton active={true} linkto={"/singup"}>Learn More</CTAButton>
+          <CTAButton active={true} linkto={"/signup"}>Learn More</CTAButton>
         </div>
       
     </div>

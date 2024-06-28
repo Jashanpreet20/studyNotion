@@ -14,6 +14,7 @@ const cookieParser=require('cookie-parser');
 const fileUpload=require('express-fileupload');
 const dotenv=require('dotenv');
 
+const PORT = process.env.PORT || 4000;
 
 
 
@@ -24,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-        origin:"http://localhost:3000",
+        origin:"*",
         credentials:true,
 }))
 
@@ -45,8 +46,10 @@ app.get("/",(req,res) =>{
     return res.json({message:"your server is up and running"});
 })
  
-app.listen(4000,() =>{
-    console.log("server is running at 4000");
+
+
+app.listen(PORT,() =>{
+    console.log(`server is running at ${PORT}`);
 })
 
 // connected database
