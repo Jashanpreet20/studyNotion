@@ -66,7 +66,7 @@ app.get("/", (req, res) => {
 //   console.log(`server is running at 4000`);
 // });
 
-app.listen(PORT,() =>{
+app.listen(PO,() =>{
     console.log(`server is running at ${PORT}`);
 })
 
