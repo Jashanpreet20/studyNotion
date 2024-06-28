@@ -56,13 +56,13 @@ app.get("/",(req,res) =>{
 })
  
 
-app.listen(4000,() =>{
-    console.log(`server is running at 4000`);
-})
-
-// app.listen(PORT,() =>{
-//     console.log(`server is running at ${PORT}`);
+// app.listen(4000,() =>{
+//     console.log(`server is running at 4000`);
 // })
+
+app.listen(PORT,() =>{
+    console.log(`server is running at ${PORT}`);
+})
 
 // connected database
 dbConnect();
