@@ -32,7 +32,7 @@ app.use(cookieParser());
 
 
 app.use(cors({
-        origin:"*",
+        origin:"https://study-notion-six-bay.vercel.app/",
         credentials:true,
 }))
 
