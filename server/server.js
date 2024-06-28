@@ -32,7 +32,7 @@ app.use(cookieParser());
 
 
 app.use(cors({
-        origin:"*",
+        origin:"https://study-notion-eta-jet.vercel.app",
         methods:["POST","GET","PUT","DELETE"],
         credentials:true,
 }))
