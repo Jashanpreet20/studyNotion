@@ -21,19 +21,19 @@ app.use(cookieParser());
 
 app.use(cors());
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://study-notion-eta-jet.vercel.app");
-  res.header(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PATCH, PUT, DELETE, HEAD,OPTIONS"
-  );
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "https://study-notion-eta-jet.vercel.app");
+//   res.header(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, PATCH, PUT, DELETE, HEAD,OPTIONS"
+//   );
 
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  next();
-});
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+//   );
+//   next();
+// });
 
 // app.use(cors({
 //         origin:"https://study-notion-eta-jet.vercel.app",
@@ -41,11 +41,11 @@ app.use(function (req, res, next) {
 //         credentials:true,
 // }))
 
-// app.use(cors({
-//         origin:"http://localhost:3000",
-//         methods:["POST","GET","PUT","DELETE"],
-//         credentials:true,
-// }))
+app.use(cors({
+        origin:"http://localhost:3000",
+        methods:["POST","GET","PUT","DELETE"],
+        credentials:true,
+}))
 
 // connection to cloudinary
 
