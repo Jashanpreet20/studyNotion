@@ -270,7 +270,8 @@ function CourseDetails() {
                   alt="Author"
                   className="h-14 w-14 rounded-full object-cover"
                 />
-                <p className="text-lg">{`${instructor.firstName} ${instructor.lastName}`}</p>
+                 
+                 <HighLightText  text={`${instructor.firstName} ${instructor.lastName}`} />
               </div>
               <p className="text-richblack-50">
                 {instructor?.additionalDetails?.about}

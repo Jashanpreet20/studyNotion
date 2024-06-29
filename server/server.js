@@ -35,11 +35,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(cors({
-        origin:"https://study-notion-eta-jet.vercel.app",
-        methods:["POST","GET","PUT","DELETE"],
-        credentials:true,
-}))
+// app.use(cors({
+//         origin:"https://study-notion-eta-jet.vercel.app",
+//         methods:["POST","GET","PUT","DELETE"],
+//         credentials:true,
+// }))
 
 // app.use(cors({
 //         origin:"http://localhost:3000",
