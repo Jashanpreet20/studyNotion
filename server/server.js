@@ -21,28 +21,8 @@ app.use(cookieParser());
 
 app.use(cors());
 
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "https://study-notion-eta-jet.vercel.app");
-//   res.header(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PATCH, PUT, DELETE, HEAD,OPTIONS"
-//   );
-
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-//   );
-//   next();
-// });
-
-// app.use(cors({
-//         origin:"https://study-notion-eta-jet.vercel.app",
-//         methods:["POST","GET","PUT","DELETE"],
-//         credentials:true,
-// }))
-
 app.use(cors({
-        origin:"http://localhost:3000",
+        origin:"*",
         methods:["POST","GET","PUT","DELETE"],
         credentials:true,
 }))
@@ -51,7 +31,7 @@ app.use(cors({
 
 cloudinary.cloudinaryConnect();
 
-app.use(fileUpload({ useTempFiles: true, tempFileDir: "/temp/" }));
+ app.use(fileUpload({ useTempFiles: true, tempFileDir: "/temp/" }));
 
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
@@ -66,6 +46,13 @@ app.get("/", (req, res) => {
 //   console.log(`server is running at 4000`);
 // });
 
+app.use(cors({
+  origin:"https://study-notion-eta-jet.vercel.app",
+  methods:["POST","GET","PUT","DELETE"],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials:true,
+}))
+
 app.listen(PORT,() =>{
     console.log(`server is running at ${PORT}`);
 })
@@ -73,8 +60,4 @@ app.listen(PORT,() =>{
 // connected database
 dbConnect();
 
-// "node_modules/razorpay": {  1656
-//     "version": "0.0.0",
-//     "resolved": "https://registry.npmjs.org/razorpay/-/razorpay-0.0.0.tgz",
-//     "integrity": "sha512-KkS1YxHC0lp8SkztkNTsfSLrftmYIqCLM2xFbM0ebqFStgavQFBPLARcMH0t2uuOflWdRWWbqW7W9xjlBgfczg=="
-//   },
+
