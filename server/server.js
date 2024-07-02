@@ -21,11 +21,11 @@ app.use(cookieParser());
 
 app.use(cors());
 
-app.use(cors({
-        origin:"*",
-        methods:["POST","GET","PUT","DELETE"],
-        credentials:true,
-}))
+// app.use(cors({
+//         origin:"*",
+//         methods:["POST","GET","PUT","DELETE"],
+//         credentials:true,
+// }))
 
 // connection to cloudinary
 
@@ -47,7 +47,7 @@ app.get("/", (req, res) => {
 // });
 
 app.use(cors({
-  origin:"https://study-notion-eta-jet.vercel.app",
+  origin:"*",
   methods:["POST","GET","PUT","DELETE"],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials:true,
