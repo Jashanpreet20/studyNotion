@@ -1,4 +1,18 @@
 {
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
-  "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
+   "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }],
+   "version": 2,
+   "builds": [
+    {
+      "src": "/server/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ]
 }
