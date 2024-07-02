@@ -1,22 +1,28 @@
 {
+   
     "rewrites": [
+      { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
       {
         "source": "/(.*)",
-        "destination": "./index.html"
-      }
-    ]
+        "headers": [
+          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      },
+      {
+        "source": "/https://study-notion-eta-jet.vercel.app/(.*)",
+        "headers": [
+          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      }  
+  ]
     ,
     "builds":[
         {
           "src":"./server/server.js",
           "use":"@vercel/node"
         }
-    ],
-    "routes":[
-      {
-        "src":"/.",
-        "destination":"./server/server.js"
-      }
     ]
   }
 
