@@ -47,7 +47,7 @@ app.get("/", (req, res) => {
 // });
 
 app.use(cors({
-  origin:"*",
+  origin:"https://study-notion-eta-jet.vercel.app",
   methods:["POST","GET","PUT","DELETE"],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials:true,
