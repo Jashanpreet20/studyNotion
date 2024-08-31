@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { RxCross2 } from "react-icons/rx"
 import ReactStars from "react-stars"
 import { useSelector } from "react-redux"
-
+import toast from "react-hot-toast"
 import { createRating } from "../../../services/operations/CourseDetailApi"
 import IconButton from '../../Common/IconButton'
 
@@ -31,7 +31,7 @@ export default function CourseReviewModal({ setReviewModal }) {
   }
 
   const onSubmit = async (data) => {
-    await createRating(
+   const result= await createRating(
       {
         courseId: courseEntireData._id,
         rating: data.courseRating,
@@ -39,6 +39,12 @@ export default function CourseReviewModal({ setReviewModal }) {
       },
       token
     )
+
+    if(result.success === false){
+      return <div>
+          toast.error("user already reivew this course");
+      </div>
+    }
     setReviewModal(false)
   }
 
