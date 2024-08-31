@@ -31,7 +31,7 @@ app.use(cors());
 
 cloudinary.cloudinaryConnect();
 
-app.use(fileUpload({ useTempFiles: true, tempFileDir: "/temp/" }));
+//app.use(fileUpload({ useTempFiles: true, tempFileDir: "/temp/" }));
 
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
@@ -50,14 +50,14 @@ app.use(
   cors({
     origin: "https://study-notion-eight-pi.vercel.app",
     methods: ["POST", "GET", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+  //  allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
 
-app.listen(PORT, () => {
-  console.log(`server is running at ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`server is running at ${PORT}`);
+// });
 
 // connected database
 dbConnect();
