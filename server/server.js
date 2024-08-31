@@ -31,7 +31,7 @@ app.use(cors());
 
 cloudinary.cloudinaryConnect();
 
-//app.use(fileUpload({ useTempFiles: true, tempFileDir: "/temp/" }));
+app.use(fileUpload({ useTempFiles: true, tempFileDir: "/temp/" }));
 
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
@@ -55,9 +55,9 @@ app.use(
   })
 );
 
-// app.listen(PORT, () => {
-//   console.log(`server is running at ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`server is running at ${PORT}`);
+});
 
 // connected database
 dbConnect();
